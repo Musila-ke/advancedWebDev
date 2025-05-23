@@ -2,85 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Student Registration</title>
+  <title>Student Forms</title>
 </head>
 <body>
 
-  <main>
-    <article>
-      <h1 id="form-title">Student Registration Form</h1>
+  <main role="main">
+    <section>
+      <h1>Student Forms</h1>
 
-      <section>
-        <h2>Personal Details</h2>
-        <form action="/register" method="post" aria-labelledby="form-title" novalidate>
-          <fieldset>
-            <legend>Who You Are</legend>
+      <form aria-labelledby="formTitle">
+        <fieldset>
+          <legend>Personal Information</legend>
 
-            <label for="fullName">Full Name:</label>
-            <input 
-              type="text" 
-              id="fullName" 
-              name="fullName" 
-              required 
-              minlength="3"
-              aria-required="true" 
-              placeholder="Jane Doe">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required aria-required="true">
 
-            <label for="email">Email Address:</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required 
-              aria-required="true" 
-              placeholder="jane@example.com">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required aria-required="true">
+        </fieldset>
 
-            <label for="phone">Phone Number:</label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone" 
-              pattern="^\+?[0-9\s\-]{7,15}$" 
-              required 
-              aria-required="true" 
-              placeholder="+123 456 7890"
-              title="Enter a valid phone number">
-          </fieldset>
+        <fieldset>
+          <legend>Location</legend>
 
-          <fieldset>
-            <legend>Academic Details</legend>
+          <label for="country">Country:</label>
+          <input list="countries" id="country" name="country" required>
+          <datalist id="countries">
+            <option value="Kenya">
+            <option value="Uganda">
+            <option value="Tanzania">
+            <option value="Rwanda">
+          </datalist>
 
-            <label for="univ">University Attended:</label>
-            <input 
-              list="universities" 
-              id="univ" 
-              name="university" 
-              required 
-              aria-required="true" 
-              placeholder="Start typing..."
-              pattern="State University|Tech Institute|Community College|Private University"
-              title="Choose a valid university from the list.">
-            <datalist id="universities">
-              <option value="State University">
-              <option value="Tech Institute">
-              <option value="Community College">
-              <option value="Private University">
-            </datalist>
-          </fieldset>
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required>
+        </fieldset>
 
-          <button type="submit">Submit Registration</button>
-        </form>
-      </section>
-    </article>
+        <fieldset>
+          <legend>Preferences</legend>
 
-    <aside>
-      <h2>Need Help?</h2>
-      <p>If you run into any issues, email support@school.edu or call +1-800-123-4567.</p>
-    </aside>
+          <label for="browser">What browser will you be using?</label>
+          <select id="browser" name="browser" required>
+            <option value="">--Select a browser--</option>
+            <option value="chrome">Google Chrome</option>
+            <option value="firefox">Mozilla Firefox</option>
+            <option value="safari">Safari</option>
+            <option value="edge">Microsoft Edge</option>
+          </select>
+        </fieldset>
 
-    <figure>
-      <figcaption>Fill out all fields carefully before submitting.</figcaption>
-    </figure>
+        <button type="submit">Register</button>
+      </form>
+    </section>
   </main>
 
 </body>
