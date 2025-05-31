@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Student Forms</title>
+  <style>
+    #successMessage {
+      display: none;
+      color: green;
+      margin-top: 1em;
+    }
+  </style>
 </head>
 <body>
 
@@ -10,10 +17,7 @@
     <section>
       <h1 id="formTitle">Student Forms</h1>
 
-     <form aria-labelledby="formTitle" action="#" method="get">
-
-
-
+      <form aria-labelledby="formTitle" action="#" method="post">
         <fieldset>
           <legend>Personal Information</legend>
 
@@ -53,10 +57,23 @@
           </select>
         </fieldset>
 
-        <button type="button">Register</button>
+        <button type="button" id="registerBtn">Register</button>
+        <p id="successMessage">Successfully registered!</p>
       </form>
     </section>
   </main>
+
+  <script>
+    document.getElementById('registerBtn').addEventListener('click', function () {
+      // Optionally check if form fields are valid
+      const form = document.querySelector('form');
+      if (form.checkValidity()) {
+        document.getElementById('successMessage').style.display = 'block';
+      } else {
+        form.reportValidity(); // Show validation errors
+      }
+    });
+  </script>
 
 </body>
 </html>
