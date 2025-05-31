@@ -3,13 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Student Forms</title>
-  <style>
-    #successMessage {
-      display: none;
-      color: green;
-      margin-top: 1em;
-    }
-  </style>
 </head>
 <body>
 
@@ -57,23 +50,10 @@
           </select>
         </fieldset>
 
-        <button type="button" id="registerBtn">Register</button>
-        <p id="successMessage">Successfully registered!</p>
+        <button type="button">Register</button>
       </form>
     </section>
   </main>
-
-  <script>
-    document.getElementById('registerBtn').addEventListener('click', function () {
-      // Optionally check if form fields are valid
-      const form = document.querySelector('form');
-      if (form.checkValidity()) {
-        document.getElementById('successMessage').style.display = 'block';
-      } else {
-        form.reportValidity(); // Show validation errors
-      }
-    });
-  </script>
 
 </body>
 </html>
